@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>D3 Line Chart of Alex Ovechkin Career Stats</title>
+  <link rel="stylesheet" type="text/css" href="css/main.processed.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <div class="stats-dropdown js-dropdown">
+    <input type="hidden" class="dropdown-input" />
+    <span class="stats-button stats-button-dropdown dropdown-current">Select Stat</span>
+    <ul class="dropdown-list">
+      <li class="dropdown-item" data-dropdown-value="G">Goals</li>
+      <li class="dropdown-item" data-dropdown-value="A">Assists</li>
+      <li class="dropdown-item" data-dropdown-value="P">Points</li>
+      <li class="dropdown-item" data-dropdown-value="+/-">Plus/Minus</li>
+      <li class="dropdown-item" data-dropdown-value="PIM">Penalty Minutes</li>
+      <li class="dropdown-item" data-dropdown-value="PPG">Power-Play Goals</li>
+      <li class="dropdown-item" data-dropdown-value="SHG">Short-Handed Goals</li>
+      <li class="dropdown-item" data-dropdown-value="SHP">Short-Handed Points</li>
+      <li class="dropdown-item" data-dropdown-value="GWG">Game Winning Goals</li>
+      <li class="dropdown-item" data-dropdown-value="OTG">Overtime Goals</li>
+      <li class="dropdown-item" data-dropdown-value="S">Shots</li>
+      <li class="dropdown-item" data-dropdown-value="S%">Shooting Percentage</li>
+      <li class="dropdown-item" data-dropdown-value="FO%">Faceoff Percentage</li>
+      <li class="dropdown-item" data-dropdown-value="GP">Games Played</li>
+    </ul>
+  </div>
+  
+  <div class="align-c">
+    <h2>Alex Ovechkin's Regular Season Career Statistics</h2>
+
+    <div id="chartContainer">
+    </div>
+  </div>
+
+  <!--   Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
+  <script src="js/d3-interactive.js"></script>
+  <script src="js/styles.processed.js"></script>
+</body>
+
+</html>

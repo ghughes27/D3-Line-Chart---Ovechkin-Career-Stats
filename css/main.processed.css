@@ -1,0 +1,151 @@
+html {
+  height: 100%;
+}
+
+.align-c {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h2 {
+  font-family: Lato, Helvetica, arial, sans-serif;
+}
+
+.stats-dropdown {
+  position: relative;
+  display: inline-flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  text-align: left;
+  z-index: 20;
+  font-family: Lato;
+}
+
+.dropdown-list {
+  margin: 5px 0 0 0;
+  padding: 6px 0;
+  list-style: none;
+  position: absolute;
+  top: 125%;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  border-radius: 3px;
+  background: #fff;
+  transition: opacity .25s linear, top .25s linear;
+}
+
+.stats-dropdown.is-open .dropdown-list {
+  opacity: 1;
+  visibility: visible;
+  top: 100%;
+}
+
+.dropdown-item {
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 20px;
+  cursor: pointer;
+  color: #434A54;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background-color .25s linear;
+}
+
+.dropdown-item:hover {
+  background-color: #e6e9ed;
+}
+
+.stats-button {
+  -webkit-appearance: none;
+  margin: 0;
+  border: 0;
+  overflow: visible;
+  font: Lato;
+  text-transform: none;
+  display: inline-block;
+  vertical-align: middle;
+  text-decoration: none;
+  text-align: center;
+  user-select: none;
+}
+
+.stats-button:hover,
+.stats-button:focus {
+  outline: none;
+  text-decoration: none;
+}
+
+.stats-button:not(:disabled) {
+  cursor: pointer;
+}
+
+.stats-button-dropdown {
+  padding: 6px 34px 6px 12px;
+  background-color: #967adc;
+  color: #e6e9ed;
+  font-size: 14px;
+  line-height: 20px;
+  min-width: 150px;
+  border-radius: 3px;
+  transition: background-color .2s linear;
+}
+
+.stats-button-dropdown:hover {
+  background-color: #ac92ec;
+}
+
+.stats-button-dropdown:after {
+  content: "";
+  position: absolute;
+  top: 14px;
+  right: 11px;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-top-color: #E6E9ED;
+}
+
+#chartContainer {
+  font-family: Lato, Helvetica, arial, sans-serif;
+  position: relative;
+}
+
+svg {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+  overflow: visible;
+}
+
+.chart-axis {
+  font-size: .8rem;
+  fill: #666;
+  font-family: Lato;
+}
+
+.chart-axis path,
+.chart-axis line {
+  fill: none;
+  stroke: rgba(62, 96, 111, 0.4);
+  stroke-width: .08rem;
+  text-anchor: middle;
+}
+
+.axis_labels {
+  font-size: .85rem;
+  fill: #666;
+  font-weight: 600;
+}
