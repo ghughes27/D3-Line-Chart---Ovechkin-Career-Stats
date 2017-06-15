@@ -71,12 +71,12 @@ d3.csv("ov-stats.csv", (err, data) => {
     .y(d => yScale(d.dataset))
     .curve(d3.curveCatmullRom);
 
-  svg.append("path")
+  var path = svg.append("path")
     .attr("class", "chart_line")
     .attr("d", lineValue(data))
     .attr("fill", "none")
     .attr("stroke", "url(#grad1)")
-    .attr("stroke-width", "3.5");
+    .attr("stroke-width", "3.5")
 
   var dots = svg
     .selectAll(".dots")
@@ -119,7 +119,7 @@ d3.csv("ov-stats.csv", (err, data) => {
     .attr("x", 0)
     .attr("y", padding.top)
     .text("Goals Scored");
-  
+
   svg.append("text")
   	.attr("class", "x_label axis_labels")
   	.attr("x", width - margin.right)
@@ -153,19 +153,19 @@ d3.csv("ov-stats.csv", (err, data) => {
 
     // Creating the line
     lineValue.y(d => yScale(d.dataset))
-    	
+
     svg.select(".chart_line")
-      .attr("d", lineValue(data))
       .transition()
       .on('start', function() {
 				d3.select(this).attr("stroke-width", "5");
       })
       .duration(1000)
+      .attr("d", lineValue(data))
       .transition()
+    	.duration(500)
     	.on('end', function() {
       	d3.select(this).attr('stroke-width', '4')
       })
-    	.duration(500)
 
     var dots = svg.selectAll(".dots")
       .data(data)
@@ -186,16 +186,14 @@ d3.csv("ov-stats.csv", (err, data) => {
         d3.select(this).attr("stroke", "rgb(198, 12, 48").attr('fill', '#fff').attr("r", 4)
       });
 
-    //Update Y axis
-    
-
+    //Update Y axis for +/- stat
     if ($('.y.axis').is('#axis-negative')) {
       // svg.select('#axis-negative').transition().duration(1000).call(yAxis)
       svg.select('#axis-negative').transition().duration(1000).call(yAxis)
     } else {
       svg.select(".y.axis").transition().duration(1000).call(yAxis);
     }
-    
+
     d3.select('.y.axis').attr('id', 'null')
   });
 });
