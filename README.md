@@ -1,6 +1,6 @@
 # D3 Line Chart Example - Sports Career Stats
 
-Example can be found on Codepen: [D3 Line Chart Example - Sports Career Stats](https://codepen.io/gphughes/project/editor/DaoJxv/)
+Example can be found on Codepen: [D3 Line Chart Example - Sports Career Stats](https://codepen.io/gphughes/projects/public/)
 
 Repo used as a means to deploy code to my newly created server: [gavinhughes.us](gavinhughes.us)
 
