@@ -10,60 +10,68 @@ html {
 }
 
 body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   margin: 0;
   min-height: 100%;
   text-rendering: optimizeSpeed;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 h2 {
   font-family: Lato, Helvetica, arial, sans-serif;
+  margin-bottom: 5%;
+}
+
+div {
+  display: block;
 }
 
 // DropDown Component
 .stats-dropdown {
-  position: relative;
   display: inline-flex;
-  flex-wrap: wrap;
   flex-direction: row;
+  flex-wrap: wrap;
+  font-family: Lato;
+  position: relative;
   text-align: left;
   z-index: 20;
-  font-family: Lato;
 }
 
 .dropdown-list {
-  margin: 5px 0 0 0;
-  padding: 6px 0;
+  background: #fff;
+  border-radius: 3px;
+  left: 0;
   list-style: none;
+  margin: 5px 0 0 0;
+  opacity: 0;
+  padding: 6px 0;
   position: absolute;
   top: 125%;
-  left: 0;
-  width: 100%;
-  opacity: 0;
-  visibility: hidden;
-  border-radius: 3px;
-  background: #fff;
   transition: opacity .25s linear, top .25s linear;
-  
+  visibility: hidden;
+  width: 100%;
+
   .stats-dropdown.is-open & {
+            box-shadow: 5px 6px 6px -6px #777;
+        -webkit-box-shadow: 5px 6px 6px -6px #777;
+       -moz-box-shadow: 5px 6px 6px -6px #777;
     opacity: 1;
-    visibility: visible;
     top: 100%;
+    visibility: visible;
   }
 }
 
 .dropdown-item {
-  padding: 6px 12px;
+  color: #434A54;
+  cursor: pointer;
   font-size: 14px;
   line-height: 20px;
-  cursor: pointer;
-  color: #434A54;
-  white-space: nowrap;
   overflow: hidden;
+  padding: 6px 12px;
   text-overflow: ellipsis;
   transition: background-color .25s linear;
-  
+  white-space: nowrap;
+
   &:hover {
     background-color: #e6e9ed;
   }
@@ -72,23 +80,23 @@ h2 {
 // Stats Button
 .stats-button {
   -webkit-appearance: none;
-  margin: 0;
   border: 0;
-  overflow: visible;
-  font: Lato;
-  text-transform: none;
   display: inline-block;
-  vertical-align: middle;
-  text-decoration: none;
+  font: Lato;
+  margin: 0;
+  overflow: visible;
   text-align: center;
+  text-decoration: none;
+  text-transform: none;
   user-select: none;
-  
+  vertical-align: middle;
+
   &:hover,
   &:focus {
     outline: none;
     text-decoration: none;
   }
-  
+
   &:not(:disabled) {
     cursor: pointer;
   }
@@ -96,29 +104,29 @@ h2 {
 
 // Dropdown Modifier
 .stats-button-dropdown {
-  padding: 6px 34px 6px 12px;
+  // min-height: 32px;
   background-color: #967adc;
+  border-radius: 3px;
   color: #e6e9ed;
   font-size: 14px;
   line-height: 20px;
-  // min-height: 32px;
   min-width: 150px;
-  border-radius: 3px;
+  padding: 6px 34px 6px 12px;
   transition: background-color .2s linear;
-  
+
   &:hover {
     background-color: #ac92ec;
   }
-  
+
   &:after {
-    content: "";
-    position: absolute;
-    top: 14px;
-    right: 11px;
-    width: 0;
-    height: 0;
-    border: 5px solid transparent;
     border-top-color: #E6E9ED;
+    border: 5px solid transparent;
+    content: "";
+    height: 0;
+    position: absolute;
+    right: 11px;
+    top: 14px;
+    width: 0;
   }
 }
 
@@ -130,28 +138,66 @@ h2 {
 svg {
   height: auto;
   max-width: 100%;
-  vertical-align: middle;
   overflow: visible;
+  vertical-align: middle;
 }
 
 .chart-axis {
-  font-size: .8rem;
   fill: #666;
   font-family: Lato;
+  font-size: 1.1rem;
 }
 
 .chart-axis path,
 .chart-axis line {
   fill: none;
-  stroke: rgba(#3E606F, 0.4);
-  stroke-width: .08rem;
+  stroke-width: .1rem;
+  stroke: rgba(38, 53, 60, 0.64);;
   text-anchor: middle;
 }
 
 .axis_labels {
-  font-size: .85rem;
   fill: #666;
+  font-size: 1rem;
   font-weight: 600;
 }
 
+circle {
+  transition: all 200ms ease;
+}
 
+circle:hover {
+  cursor: pointer;
+  transform-origin: initial;
+  transform: scale(1.1);
+  z-index: 20;
+}
+
+
+.hover-line {
+  stroke-dasharray: 3,3;
+  stroke-width: 2px;
+  stroke: #6f257f;
+}
+
+div.tooltip {
+  background: #4b4b4b;
+  border-radius: 4px;
+  border: 0px;
+  color: #acacac;
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: .8rem;
+  font-weight: normal;
+  height: auto;
+  max-width: 250px;
+  padding: 10px 15px;
+  pointer-events: none;
+  position: absolute;
+  text-align: center;
+}
+
+div.tooltip span {
+  color: #ececec;
+  margin-bottom: 10px;
+  word-break: break-all;
+}
