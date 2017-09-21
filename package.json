@@ -1,0 +1,25 @@
+{
+  "name": "d3-ovechkin-career-stats",
+  "version": "1.0.0",
+  "description": "A D3.js model of Alex Ovechkin's regular season career statistics in the NHL.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ghughes27/D3-Ovechkin-Career-Stats.git"
+  },
+  "keywords": [
+    "d3",
+    "line-chart",
+    "tooltip",
+    "statistics",
+    "sports"
+  ],
+  "author": "Gavin Hughes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ghughes27/D3-Ovechkin-Career-Stats/issues"
+  },
+  "homepage": "https://github.com/ghughes27/D3-Ovechkin-Career-Stats#readme"
+}
